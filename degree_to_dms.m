@@ -11,3 +11,7 @@ function [deg , minute , second] = degree_to_dms (decimal_deg)
   second = (minute_decimal - minute).*60;
   
 endfunction
+
+
+%% for calling the function please write the next line in matlab live script
+%% [deg , minute , second] = degree_to_dms (60.325)
