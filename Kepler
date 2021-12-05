@@ -1,0 +1,14 @@
+%% Create a function that computes E from given M in Kepler equation
+% File kepler.m solves Kepler's equation, E and M are in radians
+% M = E-e sin E
+% M:meananomaly
+% E:eccentricanomaly
+% e:eccentricity e ∈ [0;1] 
+% E = M +e sin E
+% E_i+1 = M + e sin E_i   with starting value E_i= M
+
+function E = kepler (M,e)
+  % E = M + e * sind(E);
+  f = @(E) E - e * sin(E) - M;
+  E = fzero(f,M);              %use M as the initial guess
+end
